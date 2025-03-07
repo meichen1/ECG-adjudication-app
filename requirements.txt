@@ -1,0 +1,13 @@
+pandas
+numpy
+matplotlib
+xmltodict
+plotly
+dash
+flask_caching
+google-api-python-client
+google-auth 
+google-auth-oauthlib 
+google-auth-httplib2
+itsdangerous
+gunicorn
