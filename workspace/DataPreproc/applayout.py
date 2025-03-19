@@ -17,7 +17,7 @@ def applayout_aftervalidation(image_files, IMAGE_DIR, user):
     return html.Div(
         [
             html.H1("WCT ECG Adjudication", style={'text-align': 'center', 'margin-top': '20px', 'margin-bottom': '20px', 'font-size': '2em'}),
-            html.H6(f"Batch {batch_num}", style={'text-align': 'center', 'margin-top': '20px', 'margin-bottom': '20px', 'font-size': '1.5em'}),
+            html.H6(f"Batch {batch_num} - 50 files", style={'text-align': 'center', 'margin-top': '20px', 'margin-bottom': '20px', 'font-size': '1.5em'}),
             dcc.Markdown('''
                  * Thank you for adjudicating ECGs for the AI-WCT project. Please review the wide complex tachycardia (WCT) below and select the most appropriate diagnosis. 
                  * Disagreements will be presented at rounds for consensus (adjudicator selections will be confidential).

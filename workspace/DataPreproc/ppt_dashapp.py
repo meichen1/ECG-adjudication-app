@@ -31,7 +31,7 @@ app.title = dash_app_name
 
 
 IMAGE_DIR = '/workspace/ecgimgs/UnCertain/'# Directory containing images
-masterlistcsvFile = '/workspace/ECGXML/uncertain_files_fullpath.csv'
+masterlistcsvFile = '/workspace/ECGXML/uncertain_files_fullpath445.csv'
 
 # Get list of image files
 processed_files = pd.read_csv(f'{IMAGE_DIR}processed_files_batch{str(batch_num)}.csv').values.tolist()
@@ -198,7 +198,7 @@ def submit_ratings(n_clicks, *ratings):
 if __name__ == '__main__':
     
     port_num = 8050 + batch_num
-    app.run_server(debug=False, host='0.0.0.0', port=port_num)
+    app.run(debug=False, host='0.0.0.0', port=port_num)
     # asyncio.run(main())
 
     

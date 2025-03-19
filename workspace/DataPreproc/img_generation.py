@@ -5,7 +5,7 @@ import numpy as np
 sys.path.append('/workspace/DataPreproc/')
 from ECGXMLReader250221 import ECGXMLReader, ecg_plot_4leads, ecg_plot12   
 batch_num = int(os.getenv('BATCH')) if os.getenv('BATCH') else ValueError('BATCH number not provided')
-num_plots_perbatch = 30
+num_plots_perbatch = 50
 
 
 def fun_image_whole_folder(UncertainMasterlistcsv, batch, img_dir, num_plots_perbatch = num_plots_perbatch, plot_12leads = False):
@@ -55,9 +55,21 @@ def fun_image_whole_folder(UncertainMasterlistcsv, batch, img_dir, num_plots_per
 
 if __name__ == '__main__':
     
-    masterlistcsvFile = '/workspace/ECGXML/uncertain_files_fullpath.csv'
+    masterlistcsvFile = '/workspace/ECGXML/uncertain_files_fullpath445.csv'
     IMAGE_DIR = '/workspace/ecgimgs/UnCertain/'# Directory containing images
     processed_files = fun_image_whole_folder(UncertainMasterlistcsv=masterlistcsvFile, batch=batch_num, img_dir=IMAGE_DIR, num_plots_perbatch=num_plots_perbatch, plot_12leads = False)
     print('Done generate images for batch:', batch_num)
+    
+    
+    
+    # ## create a full csv file with all files in under the Uncertain folder
+    # import pandas as pd
+    # import os 
+    # from glob import glob
+    # UncertainMasterlistcsv = '/workspace/ECGXML/uncertain_files_fullpathlrbbb.csv'
+    # xml_files = [y for x in os.walk('/workspace/ECGXML/UncertainFiles/uncertains_llm_lrbbb') for y in glob(os.path.join(x[0], '*.xml'))]
+    # xml_files.sort()
+    # pd.DataFrame(xml_files, columns=['xml_file']).to_csv(UncertainMasterlistcsv, index=False, header=False)
+    
 
 
